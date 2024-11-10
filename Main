@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Сайт - Твой путь в мир приключений</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+        }
+
+        header {
+            background-color: #232323;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ff6f00;
+        }
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ff6f00;
+            border-radius: 5px;
+        }
+
+        .content {
+            padding: 40px;
+            background: linear-gradient(135deg, #000000, #434343);
+        }
+
+        .section-title {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6f00;
+        }
+
+        .donate, .builds {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .donate-item, .build-item {
+            background-color: #444;
+            padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .donate-item:hover, .build-item:hover {
+            transform: scale(1.05);
+        }
+
+        .donate-item h3, .build-item h3 {
+            color: #ff6f00;
+            margin-bottom: 15px;
+        }
+
+        .donate-item i, .build-item i {
+            font-size: 30px;
+            color: #ff6f00;
+            margin-bottom: 15px;
+        }
+
+        .build-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #232323;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            color: #bbb;
+        }
+
+        .mini-page {
+            display: none;
+        }
+
+        .mini-page.active {
+            display: block;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            color: #ff6f00;
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Minecraft Adventures</h1>
+    <p>Добро пожаловать в мир приключений, сборок и донатов!</p>
+</header>
+
+<nav>
+    <a href="#donate"><i class="fas fa-donate"></i> Донат</a>
+    <a href="#builds"><i class="fas fa-cogs"></i> Сборки</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> О нас</a>
+    <a href="#privacy" onclick="showPage('privacy')"><i class="fas fa-shield-alt"></i> Политика конфиденциальности</a>
+    <a href="#contacts" onclick="showPage('contacts')"><i class="fas fa-envelope"></i> Контакты</a>
+    <a href="#faq" onclick="showPage('faq')"><i class="fas fa-question-circle"></i> FAQ</a>
+</nav>
+
+<div class="content">
+
+    <!-- Основной контент -->
+    <section id="donate">
+        <h2 class="section-title">Поддержи нас</h2>
+        <div class="donate">
+            <div class="donate-item">
+                <i class="fas fa-gift"></i>
+                <h3>100 рублей</h3>
+                <p>Получите уникальный титул в игре и небольшие бонусы!</p>
+                <button>Пожертвовать</button>
+            </div>
+            <div class="donate-item">
+                <i class="fas fa-gift"></i>
+                <h3>500 рублей</h3>
+                <p>Получите эксклюзивный набор предметов для выживания!</p>
+                <button>Пожертвовать</button>
+            </div>
+            <div class="donate-item">
+                <i class="fas fa-gift"></i>
+                <h3>1000 рублей</h3>
+                <p>Доступ к приватным серверам и дополнительным сборкам!</p>
+                <button>Пожертвовать</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="builds">
+        <h2 class="section-title">Сборки для TLauncher</h2>
+        <div class="builds">
+            <div class="build-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Сборка для выживания</h3>
+                <img src="https://example.com/survival.jpg" alt="Survival Build">
+                <p>Самая популярная сборка для выживания с множеством модов!</p>
+                <button>Скачать</button>
+            </div>
+            <div class="build-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Сборка для приключений</h3>
+                <img src="https://example.com/adventure.jpg" alt="Adventure Build">
+                <p>Погрузитесь в новые приключения с этой сборкой!</p>
+                <button>Скачать</button>
+            </div>
+            <div class="build-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Сборка для строительства</h3>
+                <img src="https://example.com/building.jpg" alt="Building Build">
+                <p>Идеальная сборка для тех, кто любит строить!</p>
+                <button>Скачать</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">О нас</h2>
+        <p>Мы — сообщество Minecraft-игроков, создающих лучшие сборки для TLauncher и поддерживающие своих поклонников через донаты и эксклюзивный контент. Присоединяйтесь к нам!</p>
+    </section>
+
+    <!-- Мини-странички -->
+    <div id="privacy" class="mini-page">
+        <h2 class="section-title">Политика конфиденциальности</h2>
+        <p>Мы уважаем вашу конфиденциальность и обязуемся защищать вашу личную информацию. Все данные, которые мы собираем, используются исключительно для улучшения качества обслуживания.</p>
+        <a href="javascript:void(0)" class="back-link" onclick="showPage('')">Назад</a>
+    </div>
+
+    <div id="contacts" class="mini-page">
+        <h2 class="section-title">Контакты</h2>
+        <p>Для связи с нами используйте следующие способы:</p>
+        <ul>
+            <li>Email: minecraft@support.com</li>
+            <li>Телефон: +7 123 456 7890</li>
+        </ul>
+        <a href="javascript:void(0)" class="back-link" onclick="showPage('')">Назад</a>
+    </div>
+
+    <div id="faq" class="mini-page">
+        <h2 class="section-title">Часто задаваемые вопросы (FAQ)</h2>
+        <h3>Как скачать сборку?</h3>
+        <p>Просто перейдите в раздел "Сборки", выберите нужную сборку и нажмите кнопку "Скачать".</p>
+        <h3>Как сделать донат?</h3>
+        <p>Перейдите в раздел "Донат" и выберите удобный для вас способ пожертвования.</p>
+        <a href="javascript:void(0)" class="back-link" onclick="showPage('')">Назад</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2024 Minecraft Adventures. Все права защищены.</p>
+</footer>
+
+<script>
+    // Функция для показа мини-странички
+    function showPage(page) {
+        // Скрываем все мини-странички
+        document.querySelectorAll('.mini-page').forEach(function(el) {
+            el.classList.remove('active');
+        });
+
+        // Если страница существует, показываем её
+        if (page) {
+            document.getElementById(page).classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
